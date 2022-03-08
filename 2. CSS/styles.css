@@ -1,0 +1,220 @@
+body {
+    font-family: arial, helvetica, freesans, sans-serif;
+    margin:0;
+}
+
+#topbar {
+    background-color:#000000;
+    color:white;
+    height:40px;
+    width:100%;
+}
+
+.fixedwidth {
+    width:1300px;
+    margin:0 auto;
+}
+
+#logo {
+    padding-top:7px;
+    padding-right:14px;
+    padding-bottom:3px;
+    float:left;
+    border-right:1px solid #666666;
+}
+
+#signin {
+    padding:13px 91px 0px 15px;
+    float:left;
+    font-weight:bold;
+    font-size:0.8em;
+}
+
+#signin img {
+    float:left;
+    position:relative;
+    right:3px;
+    bottom:4px;
+}
+
+#topmenu {
+    float:left;
+}
+
+#topmenu ul {
+    margin:0;
+    padding:0;
+}
+
+#topmenu li {
+    float:left;
+    height:100%;
+    list-style-type:none;
+    font-weight:bold;
+    font-size:0.8em;
+    border-right:1px solid #666666;
+    padding:13px 20px 11px 20px;
+}
+
+#topmenu img {
+    float:right;
+    padding:2px 0px 0px 65px;
+}
+
+#searchbar {
+    float:left;
+    padding:8px 0px 0px 20px;
+}
+
+#searchbar input {
+    height:18px;
+    width:170px;
+    border:none;
+    font-size:0.8em;
+    font-weight:bold;
+    padding:2px 3px 3px 5px;
+    background-image:url("images/search.png");
+    background-repeat:no-repeat;
+    background-position:right;
+}
+
+.break {
+    clear:both;
+}
+
+#content {
+    padding-top:10px;
+    height:437px;
+    background-color:#E7E8E1;
+    width:100%;
+}
+
+#title {
+    float:left;
+    margin-top:22px;
+    font-size:1.25em;
+    color:#4A4A4A;
+}
+
+#date {
+    float:right;
+    margin-top:22px;
+    margin-right:17px;
+    font-size:1.25em;
+    color:#4A4A4A;
+}
+
+.bigheadline {  
+    float:left;
+    position:relative;
+    top:-6px;
+    margin:0;
+    padding:216px 76px 3px 16px;
+    background-image:linear-gradient(to top, black 0%, white 60%), url(images/trump.jpg);
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:620px;
+    background-blend-mode:darken;
+}
+
+.smallheadline1 {
+    float:left;
+    position:relative;
+    top:-6px;
+    padding:83px 50px 3px 12px;
+    margin:0px 8px 0px 16px;
+    background-image:linear-gradient(to top, black 0%, white 60%), url(images/israel.jpg);
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:303px;
+    background-blend-mode:darken;
+}
+
+.smallheadline2 {
+    float:left;
+    position:relative;
+    top:-6px;
+    padding:83px 80px 3px 12px;
+    margin:0px 8px 0px 8px;
+    background-image:linear-gradient(to top, black 0%, white 60%), url(images/future.jpg);
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:303px;
+    background-blend-mode:darken;
+}
+
+.smallheadline3 {
+    float:left;
+    position:relative;
+    top:3px;
+    padding:84px 92px 3px 12px;
+    margin:0px 8px 0px 16px;
+    background-image:linear-gradient(to top, black 0%, white 60%), url(images/weather.jpg);
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:303px;
+    background-blend-mode:darken;
+}
+
+.smallheadline4 {
+    float:left;
+    position:relative;
+    top:3px;
+    padding:60px 63px 3px 12px;
+    margin:0px 8px 0px 8px;
+    background-image:linear-gradient(to top, black 0%, white 60%), url(images/crash.jpg);
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:303px;
+    background-blend-mode:darken;
+}
+
+.bhltitle {
+    padding-bottom:8px;
+    margin:0;
+    font-size:2em;
+    color:white;
+}
+
+.bhlcaption {
+    color:#D3D3D3;
+    padding-bottom:10px;
+    margin:0;
+    line-height:1.4em;
+}
+
+.shltitle {
+    padding-bottom:9px;
+    margin:0;
+    font-size:1.3em;
+    color:white;
+}
+
+.bigtopic {
+    color:#D3D3D3;
+    padding-bottom:10px;
+    margin:0;
+    font-size:0.9em;
+}
+
+.smalltopic {
+    color:#D3D3D3;
+    padding-bottom:7px;
+    margin:0;
+    font-size:0.9em;
+}
+
+.redline {
+    color:red;
+    font-size:1.1em;
+}
+
+.blackline {
+    color:black;
+    font-size:1.1em;
+}
+
+.blueline {
+    color:#47A1D8;
+    font-size:1.1em;
+}

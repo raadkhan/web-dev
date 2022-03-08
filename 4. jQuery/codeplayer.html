@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CodePlayer</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script type="text/javascript" src="jquery.min.js"></script>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+    <style>
+
+        body {
+            margin:0;
+            font-family: HelveticaNeue-Light, Helvetica Neue Light, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
+        }
+
+        #topBar {
+            height:50px;
+            width:100%;
+            background-color:#232323;
+            border-bottom:1px solid grey;
+        }
+
+        #title {
+            padding:10px 0px 0px 40px;
+            font-size:1.5em;
+            font-weight:bold;
+            float:left;
+            color:#4883CB;
+        }
+
+        #toggles {
+            margin:0 auto;
+            padding:0;
+            width:248px;
+            height:29px;
+            list-style:none;
+            border:1px solid grey;
+            border-radius:3px;
+            position:relative;
+            top:10px;
+        }
+
+        #toggles li {
+            padding:6px 13px 6px 13px;
+            float:left;
+            border-right:1px solid grey;
+            color:white;
+        }
+
+        #run {
+            float:right;
+            margin:11px 11px 0px 0px;
+            font-size:1.1em;
+            font-weight:bold;
+            color:#343434;
+        }
+
+        .clear {
+            clear:both;
+        }
+
+        .codeContainer {
+            float:left;
+            width:25%;
+            background-color:white;
+            color:white;
+            background-color:#111111;
+            padding:10px 5px 5px 5px;
+            box-sizing:border-box;
+        }
+
+        .codeContainer textarea {
+            width:100%;
+            height:95%;
+            border:none;
+            border-top:1px solid grey;
+            border-right:1px solid grey;
+            background-color:#111111;
+            border-radius:3px;
+            color:white;
+            margin-top:7px;
+            padding:5px 5px 5px 5px;
+            box-sizing:border-box;
+        }
+
+        .codeLabel {
+            float:right;
+        }
+
+        iframe {
+            float:right;
+            width:100%;
+            height:95%;
+            border:none;
+            border-top:1px solid grey;
+            border-right:1px solid grey;
+            border-radius:3px;
+            margin-top:7px;
+        }
+
+        .select {
+            background-color:#343434;
+        }
+
+
+    </style>
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <div id="topBar">
+
+            <div id="title">CodePlayer</div>
+
+            <div id="button"> <button id="run">Run</button> </div>
+
+            <ul id="toggles">
+                <li class="toggle">HTML</li>
+                <li class="toggle">CSS</li>
+                <li class="toggle">JS</li>
+                <li class="toggle" style="border:none;">Result</li>
+            </ul>
+
+        </div>
+
+        <div class="clear"></div>
+
+        <div class="codeContainer" id="HTMLCode">
+
+            <div class="codeLabel">HTML</div>
+
+            <textarea id="html"></textarea>
+
+        </div>
+
+        <div class="codeContainer" id="CSSCode">
+
+            <div class="codeLabel">CSS</div>
+
+            <textarea id="css"></textarea>
+
+        </div>
+
+        <div class="codeContainer" id="JSCode">
+
+            <div class="codeLabel">JS</div>
+
+            <textarea id="js"></textarea>
+
+        </div>
+
+        <div class="codeContainer" id="ResultCode">
+
+            <div class="codeLabel">Result</div>
+
+            <iframe id="result"></iframe>
+
+        </div>
+
+    </div>
+
+    <script>
+
+    var windowHeight = $(window).height();
+    var topBarHeight = $("#topBar").height();
+    var codeContainerHeight = windowHeight - topBarHeight;
+
+    $(".codeContainer").height(codeContainerHeight + "px");
+
+    $(".toggle").click(function() {
+
+        $(this).toggleClass("select");
+
+        var activeDiv = $(this).html();
+
+        $("#" + activeDiv + "Code").toggle();
+
+        var showingDivs = $(".codeContainer").filter(function() {
+                return ($(this).css("display") != "none");
+        }).length;
+
+        var codeContainerWidth = 100/showingDivs;
+
+        $(".codeContainer").css("width", codeContainerWidth + "%");
+
+    });
+
+    $("#run").click(function() {
+
+        $("iframe").contents().find("html").html('<style>' + $("#css").val() + '</style>' + $("#html").val());
+
+        document.getElementById("result").contentWindow.eval($("#js").val());
+    });
+
+    </script>
+
+</body>
+</html>
